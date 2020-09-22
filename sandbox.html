@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments Generator ::: Sandbox </title>
+  
+
+</head>
+<body onload="acquireDate();">
+  
+
+  <script>
+
+function acquireDate(){
+  var currentDate = new Date(); 
+  document.getElementById('dateOutput').innerHTML = currentDate; 
+}
+
+// This function returns value of the Selected Day
+function checkDate(){
+  var requestDate =  new Date(document.getElementById('date').value);
+  if (isNaN(requestDate)){
+    console.log("Waiting for User Input");
+  }else {
+    var reqDay = (requestDate.getDay()) + 1;
+    console.log(reqDay);
+
+    switch(reqDay){
+      //Sunday
+      case 7: document.getElementById('time').innerHTML = '<option>8:00 am - 9:00 am</option><option>9:00 am - 10:00 am</option><option>10:00 am - 11:00 am</option><option>11:00 am - 12:00 pm</option><option>12:00 pm - 1:00 pm</option><option>1:00 pm - 2:00 pm</option><option>2:00 pm - 3:00 pm</option>';
+      break;
+      //Monday
+      case 1: document.getElementById('time').innerHTML = '<option>8:00 am - 9:00 am</option><option>9:00 am - 10:00 am </option><option>10:00 am - 11:00 am</option><option>11:00 am - 12:00 pm</option><option>12:00 pm - 1:00 pm</option><option>1:00 pm - 2:00 pm</option><option>2:00 pm - 3:00 pm</option>';
+      break;
+      //Tuesday
+      case 2: document.getElementById('time').innerHTML = '<option>8:00 am - 9:00 am </option><option>9:00 am - 10:00 am </option><option>10:00 am - 11:00 am</option><option>11:00 am - 12:00 pm</option><option>12:00 pm - 1:00 pm</option><option>1:00 pm - 2:00 pm</option><option>2:00 pm - 3:00 pm</option>';
+      break;
+      //Wednesday
+      case 3: document.getElementById('time').innerHTML = '<option>8:00 am - 9:00 am </option><option>9:00 am - 10:00 am </option><option>10:00 am - 11:00 am</option><option>11:00 am - 12:00 pm</option><option>12:00 pm - 1:00 pm</option><option>1:00 pm - 2:00 pm</option><option>2:00 pm - 3:00 pm</option>';
+      break;
+			//Thurdsay
+      case 4: alert("There are no available time slots for the selected day of the week ~Thursday. Please choose another day");
+        location.reload('index.html#request');
+      break;
+      //Friday
+      case 5: document.getElementById('time').innerHTML = '<option>8:00 am - 9:00 am </option><option>9:00 am - 10:00 am </option><option>10:00 am - 11:00 am</option><option>11:00 am - 12:00 pm</option><option>12:00 pm - 1:00 pm</option><option>1:00 pm - 2:00 pm</option><option>2:00 pm - 3:00 pm</option>';
+      break;
+      //Saturday
+      case 6: document.getElementById('time').innerHTML = '<option>11:00 am - 12:00 pm</option><option>12:00 pm - 1:00 pm</option><option>1:00 pm - 2:00 pm</option><option>2:00 pm - 3:00 pm</option><option>3:00 pm - 4:00 pm</option><option>4:00 pm - 5:00 pm</option>';
+      break;
+
+    }
+
+
+  }
+}
+
+
+
+function finish(){ 
+  var appDate= document.getElementById('date').value; 
+  var appTime= document.getElementById('time').value; 
+
+  
+   alert("Your appointment requested for: " + appDate + " between " + appTime + " has been submitted \n Next, we must check its availability"); 
+   // window.location.replace("/confirm_request"); 
+}
+
+  </script>
+<form action="/sandbox" method="POST">
+  <h4 id="dateOutput"></h4>
+        <h3>Contact Information</h3>
+      <input type="text" name="company" id="company" placeholder="Company" /><br>
+      <input type="text" name="fname" id="fname" placeholder="First Name" required />
+      <input type="text" name="lname" id="lname" placeholder="Last Name" required/> <br>
+
+      <input type="text" name="address" id="address" placeholder="Address" required /><br>
+      <input type="text" name="city" id="city" placeholder="City" required />
+      <select type="text" name="state" id="state" placeholder="State" required>
+<option>Alabama - AL</option>
+<option>Alaska - AK</option>
+<option>Arizona - AZ</option>
+<option>Arkansas - AR</option>
+<option>California - CA</option>
+<option>Connecticut - CT</option>
+<option>Delaware - DE</option>
+<option>Florida - FL</option>
+<option>Georgia - GA</option>
+<option>Hawaii - HI</option>
+<option>Idaho - ID</option>
+<option>Illinois - IL</option>
+<option>Indiana - IN</option>
+<option>Iowa - IA</option>
+<option>Kansas - KS</option>
+<option>Kentucky - KY</option>
+<option>Louisiana - LA</option>
+<option>Maine - ME</option>
+<option>Maryland - MD</option>
+<option>Massachusetts - MA</option>
+<option>Michigan - MI</option>
+<option>Minnesota - MN</option>
+<option>Mississippi - MS</option>
+<option>Missouri - MO</option>
+<option>Montana - MT</option>
+<option>Nebraska - NE</option>
+<option>Nevada - NV</option>
+<option>New Hampshire - NH</option>
+<option>New Jersey - NJ</option>
+<option>New Mexico - NM</option>
+<option>New York - NY</option>
+<option>North Carolina - NC</option>
+<option>North Dakota - ND</option>
+<option>Ohio - OH</option>
+<option>Oklahoma - OK</option>
+<option>Oregon - OR</option>
+<option>Pennsylvania - PA</option>
+<option>Rhode Island - RI</option>
+<option>South Dakota - SD</option>
+  <option>South Carolina - SC</option>
+<option>Tennessee - TN</option>
+<option>Texas - TX</option>
+<option>Utah - UT</option>
+<option>Vermont - VT</option>
+<option>Virginia - VA</option>
+<option>Washington - WA</option>
+<option>West Virginia - WV</option>
+<option>Wisconsin - WI</option>
+<option>Wyoming - WY</option>
+      </select>
+      <input type="text" name="zipCode" id="zipCode" placeholder="Zip Code" required /><br>
+      <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" required /> <br>
+      <input type="email" name="email" id="email" placeholder="E-mail Address" required />
+
+
+
+        <h3>Appointment Information</h3>
+       <div class="form-group">
+           <p>Service:</p>
+         <select type="text" placeholder="Service" class="form-control form-control-alternative" name="service" id="service" required>
+             <option>Basic Wash - Car</option>
+             <option>Basic Wash - SUV</option>
+             <option>Interior Detail Only - Car </option>
+             <option>Interior Detail Only - SUV</option>
+             <option>Platinum Detail - Car</option>
+             <option>Platinum Detail - SUV</option>
+             <option>Other ~~ <i>Please specify in the comments below</i></option>
+           </select>
+       </div>
+        <p>Date:</p>
+         <div class="input-group">
+
+   <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+ <br> 
+
+ <input class="flatpickr flatpickr-input form-control" type="date" name="date" id="date" required placeholder="Select Date.."><br>
+ <button type="button" onclick="checkDate()">::Click Here:: <br> Proceed with Selected Date </button>
+</div>
+
+   <p><strong>Time:</strong> <br>Select an available time slot</p>
+   <select class="flatpickr datetimepicker form-control" type="text" placeholder="Time Slot Selection" name="time" id="time" required></select>
+   <br>
+<div class="form-group">
+         <textarea type="text" rows="7" cols="50"  maxlenght="1800" placeholder="Comments (Is there anything else you'd like to share with us about your appointment? ~ 1800 characters max)" class="form-control form-control-alternative" name="comments" id="comments"></textarea>
+       </div>
+        <button type="submit">Make Appointment</button> 
+
+
+
+      </form> 
+
+</body>
+</html>

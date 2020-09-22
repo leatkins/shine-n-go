@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SandBox - Appointment Request </title>
+</head>
+<body onload="countD()">
+    <h1>We Apologize.....</h1>
+    <h2>The appointment for the requested date and time has already been requested. <br>Please select another time</h2>
+<hr>
+<h4>Requested Appointment Information </h4>
+<hr>
+<p><strong>Date Requested: </strong><%= data.date%></p>
+<p><strong>Time Slot Requested: </strong><%= data.time %></p>
+
+
+<hr>
+
+<a href="http://localhost:3000"><button>Return to Home Page</button></a>
+<script>
+    countDown = 60;
+    function countD(){
+      
+    document.getElementById('counterOutput').innerHTML = countDown; 
+    
+    if(countDown > 1){
+      countDown --; 
+    }else{
+      countDown = 0; 
+      window.location.replace('http://localhost:3000');
+      }
+    setTimeout("countD()", 1000); 
+    
+    }
+    
+    </script>
+    <p>Page Redirecting in:  <span id="counterOutput"></span> seconds </p>
+</body>
+</html>

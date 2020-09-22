@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<title>Passing Variables</title>
+<script src="timeSlot.js"></script>
+</head>
+<body onload="acquireDate()">
+
+<h1>APPOINTMENT SANDBOX</h1>
+<p>Today's Date: </p>
+<p id="dateOutput"></p>
+<table>
+  <tr>
+    <td>
+      <strong>Service: </strong>
+  </td>
+  <td>
+    <select type="text" id="service" name="service">
+      <option>Basic Wash -Car | $35 </option>
+      <option>Basic Wash - SUV | $45 </option>
+      <option>Interior Detail Only - Car | $110 </option>
+      <option>Interior Detail Only- SUV | $125 </option>
+      <option>Platinum Detail - Car | $175 </option>
+      <option>Platinum Detail - SUV | $185 </option>
+    </select>
+  </td>
+</tr>
+  <tr><td><strong>Requested Appointment Date: </strong></td>
+    <td><input type="date" id="reqDate" name="reqDate" />
+      <td><button type="button" onclick="checkDate()">Select Date --></button>
+    </tr>
+<tr><td><strong>Time Slot</strong></td>
+  <td>  <select type="text" id="timeSlot" name="timeSlot">
+
+    <!-- Time Slot from script will be filled in here -->
+
+</select>
+</td>
+</tr>
+</table>
+
+</body>
+</html>
