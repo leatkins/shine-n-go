@@ -32,7 +32,7 @@ async function mailerStart(){
   
   
     let info= {
-      from: '"[NEXT-LEVEL-UP]- Online Order" <orders@nextlevelup.store' ,
+      from: '"[SHINE-N-GO]- Appointment Request" <orders@nextlevelup.store' ,
       to: "leatkins@aboveall-media.tech",
       subject: "::NEW APPOINTMENT REQUEST::",
       html: "<h1>::: NEW ::: Appointment Request</h1><hr><hr><h3>Contact Information</h3><br><hr><p>Company: " + data.company + "</p><p><strong>Customer Name: </strong>" +  data.fname + " " + data.lname + "</p><p><strong>Address: </strong>" +  data.address + " <br> " + data.city + " , " + data.state + " " + data.zipCode + "</p><p><strong>Phone Number: </strong> " + data.phoneNumber + "</p> <p><strong>E-mail Address: </strong> " + data.email + "</p><h4>Requested Appointment Information </h4><hr><p><strong>Date Requested: </strong>"+ data.date +"</p><p><strong>Time Slot Requested: </strong>"+ data.time + "</p><p><strong>Appointment Comments: </strong>" + data.comments + "</p><a href='http://www.aboveall-media.tech/appointments_req.php/'>Appointments Portal</a>"
